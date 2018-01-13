@@ -46,7 +46,7 @@ public class homework {
 		String search = null;
 		int n,p,i,j;
 		/*Scanner sc = new Scanner(new File("./src/ai/inputd34.txt"));*/
-		Scanner sc = new Scanner(new File("input.txt"));
+		Scanner sc = new Scanner(new File("/Users/rohan/Downloads/50_TestCases/CRLF/BFS/input.txt"));
 		homework hm = new homework();
 		search = sc.next();
 		n = sc.nextInt();
@@ -91,7 +91,7 @@ public class homework {
 	private void dfs(int[][] a, int n, int p) throws IOException {
 		/*BufferedWriter writer = new BufferedWriter(new FileWriter("./src/ai/output.txt"));*/
 		long start_time = System.nanoTime();
-		BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/rohan/Downloads/50_TestCases/CRLF/BFS/output.txt"));
 		Stack<Node> stack = new Stack<Node>();
 		addInitialNodesToStack(a,n,stack); //Add initial row nodes
 
@@ -105,7 +105,7 @@ public class homework {
 					a[node.i][node.j]=1;
 					node=node.parent;
 				}
-				/*System.out.println("OK");*/
+				System.out.println("OK");
 				writer.write("OK\n");
 				for(int i=0;i<n;i++) {
 					for(int j=0;j<n;j++) {
@@ -120,7 +120,7 @@ public class homework {
 		}
 
 		if(res==false) {
-			/*System.out.println("FAIL");*/
+			System.out.println("FAIL");
 			writer.write("FAIL\n");
 		}
 		
@@ -266,10 +266,10 @@ public class homework {
 
 	/***************************BFS**************************************/
 
-	private void bfs(int[][] a, int n, int p) throws IOException {
+	public void bfs(int[][] a, int n, int p) throws IOException {
 		long start_time = System.nanoTime();
 		/*BufferedWriter writer = new BufferedWriter(new FileWriter("./src/ai/output.txt"));*/
-		BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/rohan/Downloads/50_TestCases/CRLF/BFS/output.txt",true));
 		Queue<Node> q = new LinkedList<Node>();
 		addInitialNodesToQueue(a,n,q); //Add initial row nodes		
 		
@@ -285,14 +285,14 @@ public class homework {
 					node=node.parent;
 				}
 				
-				/*System.out.println("OK");*/
+				System.out.println("OK");
 				writer.write("OK\n");
-				for(int i=0;i<n;i++) {
+				/*for(int i=0;i<n;i++) {
 					for(int j=0;j<n;j++) {
 						writer.write(String.valueOf(a[i][j]));
 					}
 					writer.write("\n");
-				}
+				}*/
 				
 				break;
 			}
@@ -300,7 +300,7 @@ public class homework {
 		}
 
 		if(res==false) {
-			/*System.out.println("FAIL");*/
+			System.out.println("FAIL");
 			writer.write("FAIL\n");
 		}
 		
@@ -477,10 +477,10 @@ public class homework {
 		}
 		
 		/*BufferedWriter writer = new BufferedWriter(new FileWriter("./src/ai/output.txt"));*/
-		BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/rohan/Downloads/50_TestCases/CRLF/BFS/output.txt"));
 		
 		if(liz_space_count<p) {
-			/*System.out.println("FAIL");*/
+			System.out.println("FAIL");
 			writer.write("FAIL");
 			writer.close();
 			return;
@@ -518,7 +518,7 @@ public class homework {
 		}
 		
 		if(res) {
-			/*System.out.println("OK");*/
+			System.out.println("OK");
 			writer.write("OK\n");
 			for (Node node : newSoln) {
 				a[node.i][node.j]=1;
@@ -530,7 +530,7 @@ public class homework {
 				writer.write("\n");
 			}
 		} else {
-			/*System.out.println("FAIL");*/
+			System.out.println("FAIL");
 			writer.write("FAIL");
 		}
 		
